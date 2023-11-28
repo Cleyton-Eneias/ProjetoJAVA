@@ -106,3 +106,39 @@ class Veiculo {
 
         textArea.append("Veículo cadastrado com sucesso!\n");
     }
+    private static void visualizarVeiculo() {
+        if (veiculos.isEmpty()) {
+            JOptionPane.showMessageDialog(frame, "Nenhum veículo cadastrado.");
+            return;
+        }
+
+        String[] veiculoNames = new String[veiculos.size()];
+        for (int i = 0; i < veiculos.size(); i++) {
+            veiculoNames[i] = veiculos.get(i).getMarca() + " " + veiculos.get(i).getModelo();
+        }
+
+        String escolha = (String) JOptionPane.showInputDialog(frame, "Selecione um veículo:", "Visualizar Veículo",
+                JOptionPane.QUESTION_MESSAGE, null, veiculoNames, veiculoNames[0]);
+
+        if (escolha != null) {
+            int index = -1;
+            for (int i = 0; i < veiculoNames.length; i++) {
+                if (veiculoNames[i].equals(escolha)) {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index >= 0) {
+                Veiculo veiculoSelecionado = veiculos.get(index);
+                String informacoes = "Marca: " + veiculoSelecionado.getMarca() + "\nModelo: " + veiculoSelecionado.getModelo()
+                        + "\nAno: " + veiculoSelecionado.getAno() + "\nCor: " + veiculoSelecionado.getCor()
+                        + "\nNúmero de Chassi: " + veiculoSelecionado.getNumeroChassi();
+
+                JOptionPane.showMessageDialog(frame, informacoes, "Informações do Veículo", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(frame, "Veículo não encontrado.");
+            }
+        }
+    }
+}
