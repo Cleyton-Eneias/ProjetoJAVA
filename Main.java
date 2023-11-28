@@ -85,3 +85,24 @@ class Veiculo {
                 System.exit(0);
             }
         });
+        buttonPanel.add(cadastrarButton);
+        buttonPanel.add(visualizarButton);
+        buttonPanel.add(sairButton);
+
+        frame.add(scrollPane, BorderLayout.CENTER);
+        frame.add(buttonPanel, BorderLayout.SOUTH);
+        frame.setVisible(true);
+    }
+
+    private static void cadastrarVeiculo() {
+        String marca = JOptionPane.showInputDialog(frame, "Marca:");
+        String modelo = JOptionPane.showInputDialog(frame, "Modelo:");
+        int ano = Integer.parseInt(JOptionPane.showInputDialog(frame, "Ano:"));
+        String cor = JOptionPane.showInputDialog(frame, "Cor:");
+        String numeroChassi = JOptionPane.showInputDialog(frame, "Número de Chassi:");
+
+        Veiculo veiculo = new Veiculo(marca, modelo, ano, cor, numeroChassi);
+        veiculos.add(veiculo);
+
+        textArea.append("Veículo cadastrado com sucesso!\n");
+    }
