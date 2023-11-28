@@ -56,4 +56,32 @@ class Veiculo {
             frame = new JFrame("Cadastro de Veículos");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(400, 300);
+            textArea = new JTextArea(10, 30);
+        textArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(textArea);
 
+        JPanel buttonPanel = new JPanel();
+
+        JButton cadastrarButton = new JButton("Cadastrar Veículo");
+        cadastrarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadastrarVeiculo();
+            }
+        });
+
+        JButton visualizarButton = new JButton("Visualizar Veículo");
+        visualizarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                visualizarVeiculo();
+            }
+        });
+
+        JButton sairButton = new JButton("Sair");
+        sairButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
