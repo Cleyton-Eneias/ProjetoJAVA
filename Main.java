@@ -28,4 +28,32 @@ class Veiculo {
     public String getModelo() {
         return modelo;
     }
+    
+    public int getAno() {
+        return ano;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public String getNumeroChassi() {
+        return numeroChassi;
+    }
+}
+    public class Main {
+        private static List<Veiculo> veiculos = new ArrayList<>();
+        private static JFrame frame;
+        private static JTextArea textArea;
+
+        public static void main(String[] args) {
+            SwingUtilities.invokeLater(() -> {
+                createAndShowGUI();
+            });
+        }
+
+        private static void createAndShowGUI() {
+            frame = new JFrame("Cadastro de Veículos");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(400, 300);
 
