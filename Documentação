@@ -1,0 +1,55 @@
+// Documentação do Código
+// Descrição Geral
+// Este código em Java implementa um sistema simples de cadastro e visualização de veículos, utilizando a interface gráfica Swing. O programa permite ao usuário cadastrar veículos fornecendo informações como marca, modelo, ano, cor e número de chassi. Além disso, é possível visualizar as informações de um veículo já cadastrado.
+
+// Classes
+
+// Veiculo
+
+// Atributos:
+// marca (String): Marca do veículo.
+// modelo (String): Modelo do veículo.
+// ano (int): Ano de fabricação do veículo.
+// cor (String): Cor do veículo.
+// numeroChassi (String): Número de chassi do veículo.
+// Métodos:
+// Veiculo(String marca, String modelo, int ano, String cor, String numeroChassi): Construtor que inicializa os atributos do veículo.
+// Métodos de acesso (get) para cada atributo.
+
+// Main
+
+// Atributos:
+// veiculos (List<Veiculo>): Lista que armazena os veículos cadastrados.
+// frame (JFrame): Janela principal da aplicação.
+// textArea (JTextArea): Área de texto para exibição de mensagens.
+// Métodos:
+// main(String[] args): Método principal que inicia a aplicação Swing.
+// createAndShowGUI(): Cria e exibe a interface gráfica.
+// cadastrarVeiculo(): Solicita informações do veículo ao usuário e o cadastra na lista.
+// visualizarVeiculo(): Permite ao usuário escolher um veículo cadastrado e exibe suas informações.
+
+// Interface Gráfica
+// A interface gráfica é composta por uma janela principal (JFrame) contendo:
+
+// Uma área de texto (JTextArea) para exibir mensagens.
+// Três botões (JButton):
+// "Cadastrar Veículo": Aciona o método cadastrarVeiculo().
+// "Visualizar Veículo": Aciona o método visualizarVeiculo().
+// "Sair": Encerra a aplicação.
+
+// Fluxo de Execução
+
+// O programa inicia chamando o método main.
+// Dentro do método main, createAndShowGUI é chamado assincronamente usando SwingUtilities.invokeLater.
+// createAndShowGUI configura e exibe a interface gráfica.
+// O usuário interage com os botões, acionando os métodos correspondentes.
+// Ao clicar em "Cadastrar Veículo", o método cadastrarVeiculo é chamado, solicitando informações ao usuário e adicionando o veículo à lista.
+// Ao clicar em "Visualizar Veículo", o método visualizarVeiculo é chamado, permitindo ao usuário escolher um veículo cadastrado e exibindo suas informações.
+// O programa pode ser encerrado clicando em "Sair".
+
+// Considerações Adicionais
+
+// As informações dos veículos são armazenadas na lista veiculos.
+// As mensagens de sucesso e informações dos veículos são exibidas na área de texto.
+// O programa encerra quando o usuário clica em "Sair" ou fecha a janela principal.
+// Esse sistema básico pode ser expandido e aprimorado com funcionalidades adicionais, como edição e exclusão de veículos, persistência de dados, entre outros.
